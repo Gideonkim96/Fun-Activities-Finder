@@ -1,0 +1,34 @@
+.hero {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 200px;
+    
+}
+
+.features {
+    padding: 50px 0;
+}
+
+.feature-item {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.feature-item i {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+#about{
+    padding:100px;
+
+}
+#footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    
+}
