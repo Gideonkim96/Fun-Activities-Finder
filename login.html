@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <!-- Bootstrap CSS Link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+    
+        <style>
+        body {
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 40px;
+            margin-top: 100px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .register-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+        }
+        .register-popup-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            padding: 20px;
+            max-width: 400px;
+            width: 100%;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        .close-popup {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+    </style>
+    </style>
+</head>
+<body>
+    <!-- login form -->
+    <div class="container">
+        <h2 class="text-center">Login</h2>
+        <form id="loginForm" action="#" method="post">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Login</button>
+            <p class="text-center mt-3">Don't have an account? <a href="#" id="openRegisterPopup">Register</a></p>
+        </form>
+    </div>
+
+    <!-- Registration Popup -->
+    <div class="register-popup" id="registerPopup">
+        <div class="register-popup-content">
+            <span class="close-popup" id="closeRegisterPopup">&times;</span>
+            <h2 class="text-center">Register</h2>
+            <form id="registerForm" action="#" method="post">
+                <!-- Registration form fields here -->
+                <form>
+                    <div class="form-group">
+                        <label for="Username">Username:</label>
+                        <input type="text" class="form-control" id="newUsername" placeholder="Enter Username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="newEmail">Email:</label>
+                        <input type="email" class="form-control" id="newEmail" placeholder="Enter Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="newPassword">Password:</label>
+                        <input type="password" class="form-control" id="newPassword" placeholder="Enter Password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password:</label>
+                        <input type="password" class="form-control" id="newConfirmPassword" placeholder="Enter Password" required>
+                    </div>
+                    <button type="submit" class="btn btn-success btn-block">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script>
+        // Open Registration Popup
+        document.getElementById('openRegisterPopup').addEventListener('click', function () {
+            document.getElementById('registerPopup').style.display = 'block';
+        });
+
+        // Close Registration Popup
+        document.getElementById('closeRegisterPopup').addEventListener('click', function () {
+            document.getElementById('registerPopup').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
