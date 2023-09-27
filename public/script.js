@@ -16,10 +16,12 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
-// Function to fetch a random activity from the Bored API
-async function fetchRandomActivity() {
+async function fetchRandomActivity(price) {
   try {
-    const response = await fetch('https://www.boredapi.com/api/activity?type=recreational');
+    // Construct the API URL with filters
+    const apiUrl = `https://www.boredapi.com/api/activity?type=recreational&relaxation&price=${price}`;
+
+    const response = await fetch(apiUrl);
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }
@@ -31,14 +33,18 @@ async function fetchRandomActivity() {
   }
 }
 
-// Function to update the activity on the webpage
+// Function to update the activity on the webpage with filters
 async function updateActivityOnPage() {
-  const randomActivity = await fetchRandomActivity();
+  // Get selected filter values 
+  const selectedPrice = document.getElementById('price').value
+
+  // Fetch a random activity with filters
+  const randomActivity = await fetchRandomActivity(selectedPrice);
+
   const activityElement = document.getElementById('activity');
   activityElement.textContent = randomActivity;
 }
 
-// Event listener for the button click
+// Event listener for the "Generate Random Activity" button
 const randomBtn = document.getElementById('randomBtn');
 randomBtn.addEventListener('click', updateActivityOnPage);
-

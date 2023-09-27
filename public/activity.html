@@ -50,23 +50,23 @@
         <!-- Filters -->
         <div class="row mb-4">
             <div class="col-md-3">
-                <label for="level">Level:</label>
-                <select id="level" class="form-control">
-                    <option value="beginner">Beginner</option>
-                    <option value="intermediate">Intermediate</option>
-                    <option value="advanced">Advanced</option>
+                <label for="price">Price:</label>
+                <select id="price" class="form-control">
+                    <option value="0">Free</option>
+                    <option value="0.1">Not Free</option>
+                    <!-- <option value="advanced">Expensive</option> -->
                     
                 </select>
             </div>
-            <div class="col-md-3">
+            <!-- <div class="col-md-3">
                 <label for="category">Category:</label>
                 <select id="category" class="form-control">
                     <option value="sports">Sports</option>
                     <option value="outdoors">Outdoors</option>
                     <option value="indoor">Indoor</option>
                     <!-- Add more categories as needed -->
-                </select>
-            </div>
+                <!-- </select> -->
+            <!-- </div> --> -->
 
             <div class="mt-3">
                 <button id="filterBtn" class="btn btn-primary mt-3">Apply Filters</button>
@@ -75,9 +75,9 @@
         </div>
         
         <!-- Curated List of Activities -->
-        <div class="row" id="activityList">
+        <!-- <div class="row" id="activityList">
             <!-- Activity cards will be dynamically added here using JavaScript -->
-        </div>
+        <!-- </div> --> -->
        </div>
       <div class="random">
       <button id="randomBtn" class="btn btn-success">Generate Random Activity</button>
@@ -123,8 +123,8 @@
 
         // Function to filter activities based on level and category
         function filterActivities() {
-            const selectedLevel = document.getElementById("level").value;
-            const selectedCategory = document.getElementById("category").value;
+            const selectedLevel = document.getElementById("price").value;
+            // const selectedCategory = document.getElementById("category").value;
             
             // Clear the activity list
             document.getElementById("activityList").innerHTML = "";
