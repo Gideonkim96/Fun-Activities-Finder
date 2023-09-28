@@ -53,8 +53,8 @@
                 <label for="price">Price:</label>
                 <select id="price" class="form-control">
                     <option value="0">Free</option>
-                    <option value="0.1">Not Free</option>
-                    <!-- <option value="advanced">Expensive</option> -->
+                    <option value="0.2">Cheap</option>
+                    <option value="0.3">Expensive</option>
                     
                 </select>
             </div>
@@ -127,7 +127,7 @@
             // const selectedCategory = document.getElementById("category").value;
             
             // Clear the activity list
-            document.getElementById("activityList").innerHTML = "";
+            // document.getElementById("activityList").innerHTML = "";
 
             // Filter and display activities
             activities.forEach(activity => {
@@ -138,26 +138,26 @@
             });
         }
 
-        // Function to display an activity card
-        function displayActivity(activity) {
-            const activityList = document.getElementById("activityList");
+        // // Function to display an activity card
+        // function displayActivity(activity) {
+        //     const activityList = document.getElementById("activityList");
 
-            const cardDiv = document.createElement("div");
-            cardDiv.className = "col-md-4";
+        //     const cardDiv = document.createElement("div");
+        //     cardDiv.className = "col-md-4";
 
-            const card = document.createElement("div");
-            card.className = "card activity-card";
-            card.innerHTML = `
-                <div class="card-body">
-                    <h5 class="card-title">${activity.name}</h5>
-                    <p class="card-text">Level: ${activity.level}</p>
-                    <p class="card-text">Category: ${activity.category}</p>
-                </div>
-            `;
+        //     const card = document.createElement("div");
+        //     card.className = "card activity-card";
+        //     card.innerHTML = `
+        //         <div class="card-body">
+        //             <h5 class="card-title">${activity.name}</h5>
+        //             <p class="card-text">Level: ${activity.level}</p>
+        //             <p class="card-text">Category: ${activity.category}</p>
+        //         </div>
+        //     `;
 
-            cardDiv.appendChild(card);
-            activityList.appendChild(cardDiv);
-        }
+        //     cardDiv.appendChild(card);
+        //     activityList.appendChild(cardDiv);
+        // }
 
         // Event listeners for filter and random buttons
         document.getElementById("filterBtn").addEventListener("click", filterActivities);
@@ -166,7 +166,7 @@
         });
 
         // Initial display of all activities
-        activities.forEach(activity => displayActivity(activity));
+        // activities.forEach(activity => displayActivity(activity));
     </script>
     <script src="script.js"></script>
 </body>
