@@ -4,8 +4,55 @@ document
   .addEventListener('submit', function (event) {
     event.preventDefault(); // Prevent the default form submission
     // Add code to handle form submission, e.g., sending data to a server
-    alert('Form submitted successfully!');
+
+    // Get the form data
+    const formData = new FormData(this);
+    
+    // Access form fields
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const message = formData.get('message');
+
+    // Create an object to hold additional data (if needed)
+    // const additionalData = {
+    //   someKey: 'someValue', // Example additional data
+    // };
+
+    // Combine form data and additional data into a single object
+    const combinedData = { ...Object.fromEntries(formData) };
+
+    // Send the data to the server using the Fetch API
+    fetch('/submit-form', {
+      method: 'POST', // Use POST method to send data
+      body: JSON.stringify(combinedData), // Convert data to JSON format
+      headers: {
+        'Content-Type': 'application/json', // Set the content type to JSON
+      },
+    })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json(); // Parse the response if needed
+    })
+    .then((data) => {
+      // Handle the server's response data (if needed)
+      console.log(data);
+    })
+    .catch((error) => {
+      console.error('Error sending data to server:', error);
+    });
+
+    // Display a confirmation message (optional)
+    const confirmationMessage = 'Form submitted successfully!';
+    alert(confirmationMessage);
+
+    // Optionally, clear the form fields
+    this.reset();
   });
+      
+    
+    
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
